@@ -157,6 +157,7 @@ int main(int ac, char** av) {
 						broadcast(clients[i].fd, msg);
 						
 						FD_CLR(clients[i].fd, &write_set);
+						close(i);
 						if (clients[i].buffer)
 							free(clients[i].buffer);
 
